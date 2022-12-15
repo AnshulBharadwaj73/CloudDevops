@@ -40,8 +40,7 @@ public class BookController {
     }
 
     @PostMapping("/saveCustomer")
-    public String save(@ModelAttribute("customer") Customer theCustomer)
-            throws NoSuchAlgorithmException, NoSuchProviderException {
+    public String save(@ModelAttribute("customer") Customer theCustomer){
         // improve to secure application
        // SecureRandom secureRandomGenerator = SecureRandom.getInstance("SHA1PRNG", "SUN");
 
@@ -52,13 +51,13 @@ public class BookController {
             System.out.println(randInRange);
         } else {
             num = rnRandom.nextInt(1000000);
-            System.out.println(randInRange);
+            System.out.println(num);
         }
         theCustomer.setTrackId(num);
         double weight = theCustomer.getContainerWeight();
         double price = Math.round(weight * 12);
         theCustomer.setTotalPrice(price);
-        System.out.println(randInRange);
+        // System.out.println(randInRange);
 
         String shipment = theCustomer.getSourceCity();
         theCustomer.setShipment(shipment);
