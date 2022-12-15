@@ -43,18 +43,18 @@ public class BookController {
     public String save(@ModelAttribute("customer") Customer theCustomer)
             throws NoSuchAlgorithmException, NoSuchProviderException {
         // improve to secure application
-        SecureRandom secureRandomGenerator = SecureRandom.getInstance("SHA1PRNG", "SUN");
+       // SecureRandom secureRandomGenerator = SecureRandom.getInstance("SHA1PRNG", "SUN");
 
-        int randInRange = secureRandomGenerator.nextInt(999999);
-        // Random rnRandom=new Random(); security hotspots :- Weak Cryptography
-        // int num=rnRandom.nextInt(1000000);
-        if (randInRange > 100000) {
+       // int randInRange = secureRandomGenerator.nextInt(999999);
+         Random rnRandom=new Random(); 
+         int num=rnRandom.nextInt(1000000);
+        if (num > 100000) {
             System.out.println(randInRange);
         } else {
-            randInRange = secureRandomGenerator.nextInt(999999);
+            num = rnRandom.nextInt(1000000);
             System.out.println(randInRange);
         }
-        theCustomer.setTrackId(randInRange);
+        theCustomer.setTrackId(num);
         double weight = theCustomer.getContainerWeight();
         double price = Math.round(weight * 12);
         theCustomer.setTotalPrice(price);
