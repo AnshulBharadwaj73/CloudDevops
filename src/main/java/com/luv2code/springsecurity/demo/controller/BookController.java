@@ -48,7 +48,7 @@ public class BookController {
          Random rnRandom=new Random(); 
          int num=rnRandom.nextInt(1000000);
         if (num > 100000) {
-            System.out.println(randInRange);
+            System.out.println(num);
         } else {
             num = rnRandom.nextInt(1000000);
             System.out.println(num);
