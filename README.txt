@@ -34,7 +34,7 @@ When Spring Boot finds Thymeleaf dependency in the Maven POM file, it automatica
 No need to manually configure Thymeleaf in our code since it is auto-configured by Spring Boot.
 
 3. For Database Configuration for AWS MySQL:
-You have to create a DB and provide the endpoint of your DB to the application.property file so the data can be save in DB.
+You have to create a DB and provide the endpoint of your DB to the application.property file so the data can be save in DB
 
 
 
